@@ -63,7 +63,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement subscribe function in Notification controller.`
     -   [x] Commit: `Implement unsubscribe function in Notification service.`
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -90,5 +90,16 @@ When considering using a Vec (list) of a DashMap(map/dictionary), one thing to t
 When programming using Rust, thread-safety really needs to be considered greatly as it is emphasized quite harshly by the language itself. In the case of the List of Subscribers static variable, using a DashMap may be the more suitable approach. The Singleton pattern only has one instance that will exist throughout the enitre lifetime of the program and also only provides a single access point. On the other hand, with a DashMap, it provides thread safety from the start making it a more suitable option in this case. Additionally, DashMap is more widely-used hence promoting reliabilty and safety with its usage.
 
 #### Reflection Publisher-2
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+In the Model-View-Controller (MVC) architecture, separating the "Service" and "Repository" from a model aligns with the Single Reponisibility Principle (SRP). By this principle, it is stated that a class should only have one reason to change and in separating the "Service" and "Repository", it allows the model to focus on representing the data itself while the Service would focus in managing and handling the business logic, with the Repository managing the access of data and the storage. With the separation of these components, it promotes a model with more focused components, allowing ease in managing and maintaining in the long run.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+If we do not separate the interactions between each model (Program, Subscriber, Notification), it would most likely cause a significant increase in code complexity. If we were to take into account the idea that each model would have their own separate and individual tasks, without separting them, the code would be overloaded with domain logic, leading to a a very messy codebase. Not to mention, in certain cases where these models would have to take on additional functions and responsibilities, the codebase itself might be too burdened, increasing the likelihood of errors and in return further adding to the overall code complexity of each model.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+Personally, I found Postman to be a very helpful tool in testing my current work. With the ability to make data easily readable, it helps in checking the accuracy and correctness of my data. Though, I found the request builder interface to be very helpful as it allows me easily create different types of HTTP requests. This specific function may be found very heplful for group projects.
 
 #### Reflection Publisher-3
