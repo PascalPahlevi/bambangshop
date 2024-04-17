@@ -103,3 +103,14 @@ If we do not separate the interactions between each model (Program, Subscriber, 
 Personally, I found Postman to be a very helpful tool in testing my current work. With the ability to make data easily readable, it helps in checking the accuracy and correctness of my data. Though, I found the request builder interface to be very helpful as it allows me easily create different types of HTTP requests. This specific function may be found very heplful for group projects.
 
 #### Reflection Publisher-3
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+In this tutorial case, the Observer Pattern that was used was the Push model which can be seen in the notify method within the NotificationService. This was implemented in the for loop inside the notify method wherein the publisher sends the data to all the subscribed observers when a request occurs.
+
+2.What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+The Pull Observer Pattern has both its advantages and disadvantages. For exampe, one upside of the pull method is that it can reduce resource consumption since the observers would only receive any updates within the event that they are actively requested. In addition to that, the pull observer pattern could have more control in terms of receving updates as they can specifically choose the timing and frequency of the pulls depending on their specific needs. In contrast to this, a disadvantage with this observer pattern is that it may have a higher latency, resulting in potential delays since the observers themselves must actively interact with the updates. One other disadvantage would be the increase in network traffic in regards to how frequent the observers pull or how many are pulling at the same time.
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+If multi-threading was decided not to be used in this program, the notification system could experience clogging. In this system, the notifications are sent through different threads, hence allowing it to be sent sequentially without having the need to wait for the previous notification to be sent first. Without multi-threading, it may cause significant delays to the program, especially if many notifications were to be sent at the same time because it would then have to wait for the previous notification to be sent before the next one.
